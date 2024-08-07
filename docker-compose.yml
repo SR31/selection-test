@@ -1,7 +1,18 @@
 version: "3"
+networks:
+  surusov:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.130.0.0/16
+          gateway: 172.130.0.1
 services:
   directus:
     image: directus/directus:10.13.1
+    networks:
+      surusov:
+        ipv4_address: 172.130.0.5
     ports:
       - 8055:8055
     volumes:
@@ -22,11 +33,11 @@ services:
       CORS_EXPOSED_HEADERS: 'Content-Range'
   nginx:
     image: nginx
+    networks:
+      surusov:
+        ipv4_address: 172.130.0.4
     ports:
       - 80:80
     volumes:
       - ./nginx/config:/etc/nginx/conf.d
       - ./nginx/site:/usr/share/nginx/html
-networks:
-  default:
-    driver: bridge
