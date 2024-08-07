@@ -1,0 +1,32 @@
+version: "3"
+services:
+  directus:
+    image: directus/directus:10.13.1
+    ports:
+      - 8055:8055
+    volumes:
+      - ./directus/database:/directus/database
+      - ./directus/uploads:/directus/uploads
+      - ./directus/extensions:/directus/extensions
+    environment:
+      SECRET: "784R0yHu98y672T637ec80uoiI7"
+      ADMIN_EMAIL: "surusov@caselab.com"
+      ADMIN_PASSWORD: "selection_test"
+      DB_CLIENT: "sqlite3"
+      DB_FILENAME: "/directus/database/data.db"
+      WEBSOCKETS_ENABLED: "true"
+      CORS_ENABLED: 'true'
+      CORS_ORIGIN: 'http://localhost'
+      CORS_METHODS: 'GET,POST,PATCH,DELETE'
+      CORS_ALLOWED_HEADERS: 'Content-Type,Authorization'
+      CORS_EXPOSED_HEADERS: 'Content-Range'
+  nginx:
+    image: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx/config:/etc/nginx/conf.d
+      - ./nginx/site:/usr/share/nginx/html
+networks:
+  default:
+    driver: bridge

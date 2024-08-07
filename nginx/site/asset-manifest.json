@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a1f417d2.css",
+    "main.js": "/static/js/main.9c2b5b46.js",
+    "static/media/gotham_bold.otf": "/static/media/gotham_bold.eaee1032db0d2ff750d2.otf",
+    "static/media/gotham_light.otf": "/static/media/gotham_light.a21d1577f411612a2753.otf",
+    "index.html": "/index.html",
+    "main.a1f417d2.css.map": "/static/css/main.a1f417d2.css.map",
+    "main.9c2b5b46.js.map": "/static/js/main.9c2b5b46.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a1f417d2.css",
+    "static/js/main.9c2b5b46.js"
+  ]
+}
