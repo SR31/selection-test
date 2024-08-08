@@ -24,3 +24,7 @@ MobX был использован для хранения массива фот
 4. Выполните команду docker compose up
 5. Перейдите по ссылку http://localhost
 6. Вы прекрасны :)
+
+Админка доступна по ссылке http://localhost/directus
+Логин: surusov@caselab.com
+Пароль: selection_test
